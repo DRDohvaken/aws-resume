@@ -24,11 +24,11 @@ https://d1lut3c2ipcmzp.cloudfront.net/
 
 Adding the following to my script tag of the front page:
 ```javascript
-			fetch('https://hy5bs46l6s4u6voloin5yw2soq0qxxsu.lambda-url.ap-southeast-2.on.aws/')
-			.then(response => response.json())
-			.then((data) => {
-				document.getElementById('replace').innerText = data
-			})
+fetch('https://hy5bs46l6s4u6voloin5yw2soq0qxxsu.lambda-url.ap-southeast-2.on.aws/')
+.then(response => response.json())
+.then((data) => {
+	document.getElementById('replace').innerText = data
+})
 ```
 This will allow the Lambda function to be called by the Function URL.
 
