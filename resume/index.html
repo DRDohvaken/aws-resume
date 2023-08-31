@@ -6,14 +6,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-		<script>
-			fetch('https://hy5bs46l6s4u6voloin5yw2soq0qxxsu.lambda-url.ap-southeast-2.on.aws/')
-			.then(response => response.json())
-			.then((data) => {
-				document.getElementById('replace').innerText = data
-			})
-		</script>
-		
 	</head>
 	<body class="is-preload">
 		<div id="wrapper">
@@ -45,6 +37,12 @@
 			window.onload = function() { document.body.classList.remove('is-preload'); }
 			window.ontouchmove = function() { return false; }
 			window.onorientationchange = function() { document.body.scrollTop = 0; }
+
+			fetch('https://hy5bs46l6s4u6voloin5yw2soq0qxxsu.lambda-url.ap-southeast-2.on.aws/')
+			.then(response => response.json())
+			.then((data) => {
+				document.getElementById('replace').innerText = data
+			})
 		</script>
 	</body>
 </html>
