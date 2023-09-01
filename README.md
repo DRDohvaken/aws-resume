@@ -25,7 +25,32 @@ Accessing your domain should now reflect your website.
 
 ## Step 2: Set up Lambda and DynamoDB
 
+Create a new DynamoDB table. This is an unrelational database so it acts perfect to setup a view counter for our resume.
+![image](https://github.com/DRDohvaken/aws-resume/assets/8603276/c8a30c3d-59d4-458e-8825-4293d66b186b)
+DynamoDB uses key:value pairs to store information. In our case we will set up the key to be 'id' which is set to 1 and then 'views' for the value which we will initiate to be 0. Mine is currently displaying 14 as I have visited my resume a few times.
 
+Next, generate a Lambda function which will use Python. We will select to use a function URL which will be publicly accessible. *Ensure that CORS is enabled, we will explain this more soon*
+![image](https://github.com/DRDohvaken/aws-resume/assets/8603276/5cba2cc3-de57-459e-8311-e3db18bdc922)
+
+Add the following python code to the function. This essentially increments the views by one each time the function URL is accessed as well as prints the result. This is what we will view on our resume.
+```python
+import boto3
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('cloudresume-test')
+def lambda_handler(event, context):
+    response = table.get_item(Key={'id':'1'})
+    views = response['Item']['views']
+    views = views + 1
+    print(views)
+    response = table.put_item(Item={
+            'id':'1',
+            'views': views
+    })
+
+    return views
+```
+![image](https://github.com/DRDohvaken/aws-resume/assets/8603276/f936b0f8-fd0f-4f38-8404-67c406ae3be9)
+Ensure that the CORS 'Allow origin' is set to the Cloudfront domain. This ensures that the function will only be executed if the traffic originates from our resume.
 
 ## Step 3: Set up Git repo and CI/CD for front-end of resume
 
