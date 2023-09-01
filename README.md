@@ -1,4 +1,4 @@
-# AWS Resume
+# AWS Resume - IN PROGRESS
 Created a resume web application using AWS infrastructure.
 
 https://d1lut3c2ipcmzp.cloudfront.net/
@@ -67,4 +67,6 @@ fetch('https://hy5bs46l6s4u6voloin5yw2soq0qxxsu.lambda-url.ap-southeast-2.on.aws
 })
 ```
 This will allow the Lambda function to be called by the Function URL.
+
+## Step 5: Set up Terraform (IN-PROGRESS)
 
