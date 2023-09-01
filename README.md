@@ -68,5 +68,5 @@ fetch('https://hy5bs46l6s4u6voloin5yw2soq0qxxsu.lambda-url.ap-southeast-2.on.aws
 ```
 This will allow the Lambda function to be called by the Function URL.
 
-## Step 5: Set up Terraform (IN-PROGRESS)
+## Step 5: Set up Terraform (IN PROGRESS)
 
