@@ -13,15 +13,11 @@ https://d1lut3c2ipcmzp.cloudfront.net/
 
 
 
-## Step 3: Set up S3 Bucket and CloudFront
+## Step 3: Set up Git repo and CI/CD for front-end of resume
 
 
 
-## Step 4: Set up Git repo and CI/CD for front-end of resume
-
-
-
-## Step 5: Set up JavaScript to get resume view counter working
+## Step 4: Set up JavaScript to get resume view counter working
 
 Adding the following to my script tag of the front page:
 ```javascript
